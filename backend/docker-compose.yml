@@ -1,0 +1,14 @@
+services:
+  my-backend:
+   build: ./
+   ports:
+     - 5000:5000
+   container_name: backend_container
+   env_file:
+    - .env
+   environment:
+    MONGO_URI: ${MONGO_URI}
+    PORT: ${PORT}
+   restart: unless-stopped
+
+
